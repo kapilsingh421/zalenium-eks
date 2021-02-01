@@ -1,0 +1,18 @@
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: stagingtest
+  namespace: staging 
+  annotations:
+    kubernetes.io/ingress.class: alb
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/success-codes: 200-499 
+spec:
+  rules:
+  - host: testing.codeflash.co.in
+    http:
+      paths:
+      - backend:
+          serviceName: zalenium
+          servicePort: 80
