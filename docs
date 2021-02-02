@@ -31,7 +31,7 @@ Namespace
 
 kubectl create ns staging
 
-zalenium cHelm charts
+zalenium Helm charts
 
 
 helm repo add zalenium-github https://raw.githubusercontent.com/zalando/zalenium/master/charts/zalenium
